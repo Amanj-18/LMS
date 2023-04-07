@@ -12,34 +12,34 @@ function TeacherProfileSetting() {
                     <div className="card">
                         <h5 className="card-header">Profile Setting</h5>
                         <div className="card-body">
-                            <div class="mb-3 row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Full Name </label>
+                            <div className="mb-3 row">
+                                <label for="staticEmail" className="col-sm-2 col-form-label">Full Name </label>
                                 <div className="col-sm-10">
-                                    <input type="text" class="form-control" id="staticEmail" />
+                                    <input type="text" className="form-control" id="staticEmail" />
                                 </div>
                             </div>
-                            <div class="mb-3 row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Email </label>
+                            <div className="mb-3 row">
+                                <label for="staticEmail" className="col-sm-2 col-form-label">Email </label>
                                 <div className="col-sm-10">
-                                    <input type="text" class="form-control" id="staticEmail" />
+                                    <input type="text" className="form-control" id="staticEmail" />
                                 </div>
                             </div>
-                            <div class="mb-3 row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label">profile photo</label>
+                            <div className="mb-3 row">
+                                <label for="inputPassword" className="col-sm-2 col-form-label">profile photo</label>
                                 <div className="col-sm-10">
-                                    <input type="file" class="form-control" id="inputPassword" />
+                                    <input type="file" className="form-control" id="inputPassword" />
                                 </div>
                             </div>
-                            <div class="mb-3 row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                            <div className="mb-3 row">
+                                <label for="inputPassword" className="col-sm-2 col-form-label">Password</label>
                                 <div className="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword" />
+                                    <input type="password" className="form-control" id="inputPassword" />
                                 </div>
                             </div>
-                            <div class="mb-3 row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label">Interest</label>
+                            <div className="mb-3 row">
+                                <label for="inputPassword" className="col-sm-2 col-form-label">Interest</label>
                                 <div className="col-sm-10">
-                                    <input type="text" class="form-control" id="inputPassword" />
+                                    <input type="text" className="form-control" id="inputPassword" />
                                 </div>
                             </div>
                             <hr/>

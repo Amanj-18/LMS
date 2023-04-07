@@ -9,11 +9,13 @@ import TeacherDetail from './TeacherDetail';
 // teacher 
 import TeacherDashboard from './Teacher/TeacherDashboard';
 import TeacherLogin from './Teacher/TeacherLogin';
+import TeacherLogout from './Teacher/TeacherLogout';
 import TeacherRegister from './Teacher/TeacherRegister';
 import TeacherProfileSetting from './Teacher/TeacherProfileSetting';
 import TeacherChangePassword from './Teacher/TeacherChangePassword';
 import TeacherCourses from './Teacher/TeacherCourses';
 import AddCourse from './Teacher/AddCourse';
+import AddChapter from './Teacher/AddChapter';
 import UserList from './Teacher/UserList';
 
 // user
@@ -62,10 +64,12 @@ function Main() {
             <Route exact path="/teacher-profile-setting" element={<TeacherProfileSetting />} />
             <Route exact path="/teacher-change-password" element={<TeacherChangePassword />} />
             <Route exact path="/teacher-login" element={<TeacherLogin />} />
+            <Route exact path="/teacher-logout" element={<TeacherLogout />} />
             <Route exact path="/teacher-register" element={<TeacherRegister />} />
             <Route exact path="/teacher-dashboard" element={<TeacherDashboard />} />
             <Route exact path="/teacher-courses" element={<TeacherCourses />} />
             <Route exact path="/add-course" element={<AddCourse />} />
+            <Route exact path="/add-chapter/:course_id" element={<AddChapter />} />
             <Route exact path="/teacher-users" element={<UserList />} />
 
 

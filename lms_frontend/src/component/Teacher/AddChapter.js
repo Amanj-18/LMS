@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 import TeacherSidebar from "./TeacherSidebar"
 
-function AddCourse() {
+function AddChapter() {
     return (
         <div className="container mt-4">
             <div className="row">
@@ -10,7 +10,7 @@ function AddCourse() {
                 </aside>
                 <section className="col-md-9">
                     <div className="card">
-                        <h5 className="card-header">Add Course</h5>
+                        <h5 className="card-header">Add Chapter</h5>
                         <div className="card-body">
                             <div className="mb-3 row">
                                 <label for="staticEmail" className="col-sm-2 col-form-label">Title </label>
@@ -25,15 +25,15 @@ function AddCourse() {
                                 </div>
                             </div>
                             <div className="mb-3 row">
-                                <label for="inputPassword" className="col-sm-2 col-form-label">Featured Image</label>
+                                <label for="inputPassword" className="col-sm-2 col-form-label">Video</label>
                                 <div className="col-sm-10">
                                     <input type="file" className="form-control" id="inputPassword" />
                                 </div>
                             </div>
                             <div className="mb-3 row">
-                                <label for="inputPassword" className="col-sm-2 col-form-label">Technologies</label>
+                                <label for="inputPassword" className="col-sm-2 col-form-label">Remark</label>
                                 <div className="col-sm-10">
-                                    <input type="text" placeholder="php , python" className="form-control" id="inputPassword" />
+                                    <input type="text" placeholder="this video is focused onn basic " className="form-control" id="inputPassword" />
                                 </div>
                             </div>
                             <hr/>
@@ -46,4 +46,4 @@ function AddCourse() {
     );
 }
 
-export default AddCourse;
+export default AddChapter;
