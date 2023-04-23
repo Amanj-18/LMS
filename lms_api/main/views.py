@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework import generics
 from rest_framework import permissions
 from .serializers import TeacherSerializer
+from .serializers import CategorySerializer,CourseSerializer
 from . import models
 
 # Create your views here.
@@ -22,9 +23,32 @@ class TeacherDetail(generics.RetrieveUpdateDestroyAPIView):
 @csrf_exempt
 def teacher_login(request):
         email=request.POST['email']
-        password =request.POST['passwword']
+        password =request.POST['password']
         teacherData=models.Teacher.objects.get(email=email,password=password)
         if teacherData :
-                return JsonResponse({'bool':True})
+                return JsonResponse({'bool':True,'teacher_id':teacherData.id})
         else:
                 return JsonResponse({'bool':False}) 
+
+# Create your views here.
+class CategoryList(generics.ListCreateAPIView):
+        queryset=models.CourseCategory.objects.all()
+        serializer_class=CategorySerializer
+        # permission_classes=[permissions.IsAuthenticated]
+
+# Create your views here.
+class CourseList(generics.ListCreateAPIView):
+        queryset=models.Course.objects.all()
+        serializer_class=CourseSerializer
+        # permission_classes=[permissions.IsAuthenticated]
+
+# Create your views here.
+class TeacherCourseList(generics.ListAPIView):
+        serializer_class=CourseSerializer
+        # permission_classes=[permissions.IsAuthenticated]
+
+        def get_queryset(self):
+                teacher_id=self.kwargs['teacher_id']
+                teacher=models.Teacher.objects.get(pk=teacher_id)
+                return models.Course.objects.filter(teacher=teacher)
+                

@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react'
 import axios from "axios";
-const baseUrl = 'http://12.0.0.1:8000/api'
+const baseUrl = 'http://127.0.0.1:8000/api'
 
 
 function TeacherLogin() {
@@ -15,14 +15,15 @@ function TeacherLogin() {
         });
     }
     const submitForm = () => {
-        const teacherFormData = new FormData;
+        const teacherFormData = new FormData();
         teacherFormData.append('email', teacherLoginData.email);
         teacherFormData.append('password', teacherLoginData.password);
         try {
             axios.post(baseUrl + '/teacher-login', teacherFormData)
                 .then((response) => {
-                    if(response.data.bool == true){
+                    if(response.data.bool === true){
                         localStorage.setItem('teacherLoginStatus', true);
+                        localStorage.setItem('teacherId', response.data.teacher_id);
                         window.location.href = '/teacher-dashboard';
                     }
                 }
@@ -33,7 +34,7 @@ function TeacherLogin() {
 
     }
     const teacherLoginStatus = localStorage.getItem('teacherLoginStatus');
-    if(teacherLoginStatus == 'true'){
+    if(teacherLoginStatus === 'true'){
         window.location.href = '/teacher-dashboard';
     }
     useEffect(() => {
@@ -49,8 +50,8 @@ function TeacherLogin() {
                         <div className="card-body">
                             <form>
                                 <div className="mb-3">
-                                    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                                    <input value={teacherLoginData.email} onChange={handleChange} name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                    <label htmlFor="exampleInputEmail1" className="form-label">Email </label>
+                                    <input value={teacherLoginData.email} onChange={handleChange} name="email" type="email" className="form-control" />
                                     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                                 </div>
                                 <div className="mb-3">
